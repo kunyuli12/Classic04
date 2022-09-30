@@ -15,7 +15,7 @@ struct SwiftUIView11: View {
      }
     var body: some View {
         List{
-            ForEach(0..<10) { _ in 
+            ForEach(0..<20) { _ in
                 Text("第\(50 )行")
             }.listRowBackground(Color.clear)
         }.onAppear{

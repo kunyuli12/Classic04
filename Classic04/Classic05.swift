@@ -21,21 +21,22 @@ struct Classic05: View {
             Image("C1")
                 .resizable()
                 .ignoresSafeArea()
-            List(damo){ item in
-                if (item.ismytalk == false) || (item.speak.count > 10) {
-                    LeftView(item: item.speak)
-                }else{
-                    RightView(item: item.speak)
+            VStack {
+                List(damo){ item in
+                    if (item.ismytalk == false) || (item.speak.count > 10) {
+                        LeftView(item: item.speak)
+                    }else{
+                        RightView(item: item.speak)
+                    }
+                    //Text("對話內容：\(item.speak)")
                 }
-                //Text("對話內容：\(item.speak)")
+                //.listStyle(InsetGroupedListStyle())
+                .frame(maxWidth:.infinity)
+                .frame(height: 450, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .cornerRadius(25)
+                .padding(.bottom,40)
+                .padding()
             }
-            //.listStyle(InsetGroupedListStyle())
-            .frame(maxWidth:.infinity)
-            .frame(height: 450, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            .cornerRadius(25)
-            .padding(.bottom,40)
-            .padding()
-            
             VStack {
                 Spacer()
                 HStack {
@@ -179,3 +180,4 @@ extension View{
     }
 }
 
+//Binding = 傳址
